@@ -1,2 +1,3 @@
 /root/dataset.zip filter=lfs diff=lfs merge=lfs -text
 /root/jooseuk/dataset.zip filter=lfs diff=lfs merge=lfs -text
+/root/jooseuk/hemp/model/browning_pretrain_v4(m)_best.pth filter=lfs diff=lfs merge=lfs -text
