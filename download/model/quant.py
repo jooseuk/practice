@@ -1,8 +1,10 @@
-from torch import Tensor
-from mobilenet import *
+from mobilenet import ConvBN, UniversalInvertedBottleneck
+from torch import nn, Tensor
 from torch.nn.quantized import FloatFunctional
 from torch.quantization import QuantStub, DeQuantStub
-  
+import torch, math
+fuse_modules = torch.ao.quantization.fuse_modules_qat
+
 class QuantizableConvBN(ConvBN):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1):
         super(QuantizableConvBN, self).__init__(in_channels, out_channels, kernel_size, stride)
